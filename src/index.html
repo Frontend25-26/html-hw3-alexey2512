@@ -1,14 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:wght@400;700&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>HW3</title>
 </head>
 <body>
-    <div id="app">
-        
-    </div>
+<header>
+    <h1 class="text_center">Quize</h1>
+</header>
+<main>
+    <article class="task quiz-container">
+        <input type="checkbox" id="check-answers" hidden>
+        <label for="check-answers" class="check-button">Проверить ответы</label>
+        <div class="question">
+            <h3>Вопрос 1: Что такое CSS?</h3>
+            <label>
+                <input type="radio" name="q1" class="wrong">
+                <span>Язык программирования</span>
+            </label>
+
+            <label class="correct">
+                <input type="radio" name="q1" class="correct">
+                <span>Каскадные таблицы стилей</span>
+            </label>
+
+            <label>
+                <input type="radio" name="q1" class="wrong">
+                <span>База данных</span>
+            </label>
+        </div>
+
+    </article>
+    <article class="task">
+        <h2>Вопрос 1</h2>
+        <p>Какой-то вопрос</p>
+        <div class="checkbox_group">
+            <label>
+                <input type="checkbox" name="option1">
+                <span>Первый вариант</span>
+            </label>
+            <label>
+                <input type="checkbox" name="option2">
+                <span>Второй вариант</span>
+            </label>
+            <label>
+                <input type="checkbox" name="option3">
+                <span>Третий вариант</span>
+            </label>
+        </div>
+    </article>
+    <article class="task">
+        <h2>Вопрос 2</h2>
+        <p>Какой-то вопрос</p>
+        <div class="radio_group">
+            <label>
+                <input type="radio" id="radio1" name="group1" value="1">
+                <span>Вариант A</span>
+            </label>
+            <label>
+                <input type="radio" id="radio2" name="group1" value="2">
+                <span>Вариант B</span>
+            </label>
+            <label>
+                <input type="radio" id="radio3" name="group1" value="2">
+                <span>Вариант C</span>
+            </label>
+        </div>
+
+    </article>
+    <article class="task">
+        <h2>Вопрос 3</h2>
+        <p>Какой-то вопрос</p>
+    </article>
+    <article class="task">
+        <h2>Вопрос 4</h2>
+        <p>Какой-то вопрос</p>
+    </article>
+    <article class="task">
+        <h2>Вопрос 5</h2>
+        <p>Какой-то вопрос</p>
+    </article>
+</main>
 </body>
+<footer>
+    <button>
+
+    </button>
+</footer>
 </html>
