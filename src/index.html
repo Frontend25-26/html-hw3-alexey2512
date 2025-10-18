@@ -11,86 +11,153 @@
     <title>HW3</title>
 </head>
 <body>
-<header>
-    <h1 class="text_center">Quize</h1>
-</header>
-<main>
-    <article class="task quiz-container">
-        <input type="checkbox" id="check-answers" hidden>
-        <label for="check-answers" class="check-button">Проверить ответы</label>
-        <div class="question">
-            <h3>Вопрос 1: Что такое CSS?</h3>
-            <label>
-                <input type="radio" name="q1" class="wrong">
-                <span>Язык программирования</span>
-            </label>
+<div class="quiz">
+    <header class="quiz__header">
+        <h1 class="quiz__title">Квиз по веб-разработке</h1>
+        <p class="quiz__subtitle">Проверь свои знания по HTML и CSS</p>
+    </header>
 
-            <label class="correct">
-                <input type="radio" name="q1" class="correct">
-                <span>Каскадные таблицы стилей</span>
-            </label>
-
-            <label>
-                <input type="radio" name="q1" class="wrong">
-                <span>База данных</span>
-            </label>
+    <form class="quiz__form">
+        <div class="quiz__card">
+            <h2 class="quiz__question">1. Какой HTML-тег используется для создания ссылки?</h2>
+            <div class="quiz__options">
+                <label class="quiz__option">
+                    <input type="radio" name="q1" value="a">
+                    <span class="quiz__option-text">&lt;a&gt;</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="radio" name="q1" value="b">
+                    <span class="quiz__option-text">&lt;link&gt;</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="radio" name="q1" value="c">
+                    <span class="quiz__option-text">&lt;href&gt;</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="radio" name="q1" value="d">
+                    <span class="quiz__option-text">&lt;url&gt;</span>
+                </label>
+            </div>
+        </div>
+        <div class="quiz__card">
+            <h2 class="quiz__question">2. Какие из этих свойств CSS используются для работы с моделью отображения?
+                (выберите все подходящие)</h2>
+            <div class="quiz__options">
+                <label class="quiz__option">
+                    <input type="checkbox" name="q2" value="a">
+                    <span class="quiz__option-text">display</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="checkbox" name="q2" value="b">
+                    <span class="quiz__option-text">position</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="checkbox" name="q2" value="c">
+                    <span class="quiz__option-text">float</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="checkbox" name="q2" value="d">
+                    <span class="quiz__option-text">font-family</span>
+                </label>
+            </div>
+        </div>
+        <div class="quiz__card">
+            <h2 class="quiz__question">3. Какой CSS-селектор имеет наибольший вес (специфичность)?</h2>
+            <div class="quiz__options">
+                <label class="quiz__option">
+                    <input type="radio" name="q3" value="a">
+                    <span class="quiz__option-text">Селектор по классу</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="radio" name="q3" value="b">
+                    <span class="quiz__option-text">Селектор по ID</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="radio" name="q3" value="c">
+                    <span class="quiz__option-text">Селектор по тегу</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="radio" name="q3" value="d">
+                    <span class="quiz__option-text">Универсальный селектор</span>
+                </label>
+            </div>
         </div>
 
-    </article>
-    <article class="task">
-        <h2>Вопрос 1</h2>
-        <p>Какой-то вопрос</p>
-        <div class="checkbox_group">
-            <label>
-                <input type="checkbox" name="option1">
-                <span>Первый вариант</span>
-            </label>
-            <label>
-                <input type="checkbox" name="option2">
-                <span>Второй вариант</span>
-            </label>
-            <label>
-                <input type="checkbox" name="option3">
-                <span>Третий вариант</span>
-            </label>
-        </div>
-    </article>
-    <article class="task">
-        <h2>Вопрос 2</h2>
-        <p>Какой-то вопрос</p>
-        <div class="radio_group">
-            <label>
-                <input type="radio" id="radio1" name="group1" value="1">
-                <span>Вариант A</span>
-            </label>
-            <label>
-                <input type="radio" id="radio2" name="group1" value="2">
-                <span>Вариант B</span>
-            </label>
-            <label>
-                <input type="radio" id="radio3" name="group1" value="2">
-                <span>Вариант C</span>
-            </label>
+        <div class="quiz__card">
+            <h2 class="quiz__question">4. Какие из этих значений свойства display делают элемент блочным? (выберите все
+                подходящие)</h2>
+            <div class="quiz__options">
+                <label class="quiz__option">
+                    <input type="checkbox" name="q4" value="a">
+                    <span class="quiz__option-text">block</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="checkbox" name="q4" value="b">
+                    <span class="quiz__option-text">inline</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="checkbox" name="q4" value="c">
+                    <span class="quiz__option-text">flex</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="checkbox" name="q4" value="d">
+                    <span class="quiz__option-text">grid</span>
+                </label>
+            </div>
         </div>
 
-    </article>
-    <article class="task">
-        <h2>Вопрос 3</h2>
-        <p>Какой-то вопрос</p>
-    </article>
-    <article class="task">
-        <h2>Вопрос 4</h2>
-        <p>Какой-то вопрос</p>
-    </article>
-    <article class="task">
-        <h2>Вопрос 5</h2>
-        <p>Какой-то вопрос</p>
-    </article>
-</main>
+        <div class="quiz__card">
+            <h2 class="quiz__question">5. Какой CSS-метод лучше всего подходит для горизонтального центрирования
+                блочного элемента с известной шириной?</h2>
+            <div class="quiz__options">
+                <label class="quiz__option">
+                    <input type="radio" name="q5" value="a">
+                    <span class="quiz__option-text">margin: 0 auto;</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="radio" name="q5" value="b">
+                    <span class="quiz__option-text">text-align: center;</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="radio" name="q5" value="c">
+                    <span class="quiz__option-text">float: center;</span>
+                </label>
+                <label class="quiz__option">
+                    <input type="radio" name="q5" value="d">
+                    <span class="quiz__option-text">position: absolute; left: 50%;</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="quiz__actions">
+            <button type="reset" class="quiz__button quiz__button--reset">Сбросить ответы</button>
+            <details class="quiz__details">
+                <summary class="quiz__button quiz__button--check">Проверь себя</summary>
+                <div class="quiz__answers">
+                    <div class="quiz__answer">
+                        <span class="quiz__answer-question">1. Какой HTML-тег используется для создания ссылки?</span>
+                        <span class="quiz__answer-correct">Правильный ответ: &lt;a&gt;</span>
+                    </div>
+                    <div class="quiz__answer">
+                        <span class="quiz__answer-question">2. Какие из этих свойств CSS используются для работы с моделью отображения?</span>
+                        <span class="quiz__answer-correct">Правильные ответы: display, position, float</span>
+                    </div>
+                    <div class="quiz__answer">
+                        <span class="quiz__answer-question">3. Какой CSS-селектор имеет наибольший вес (специфичность)?</span>
+                        <span class="quiz__answer-correct">Правильный ответ: Селектор по ID</span>
+                    </div>
+                    <div class="quiz__answer">
+                        <span class="quiz__answer-question">4. Какие из этих значений свойства display делают элемент блочным?</span>
+                        <span class="quiz__answer-correct">Правильные ответы: block, flex, grid</span>
+                    </div>
+                    <div class="quiz__answer">
+                        <span class="quiz__answer-question">5. Какой CSS-метод лучше всего подходит для горизонтального центрирования блочного элемента с известной шириной?</span>
+                        <span class="quiz__answer-correct">Правильный ответ: margin: 0 auto;</span>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </form>
+</div>
 </body>
-<footer>
-    <button>
-
-    </button>
-</footer>
 </html>
