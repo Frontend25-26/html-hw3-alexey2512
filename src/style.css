@@ -2,42 +2,43 @@
     --purple: #6a11cb;
     --blue: #2575fc;
     --green: #28a745;
+    --greed-light: #dbffe4;
+    --red: #dc3545;
+    --red-light: #ffeeee;
     --gray-light: #f8f9fa;
     --gray-medium: #e9ecef;
+    --gray-medium-rare: #dee2e6;
     --gray-dark: #495057;
     --text-dark: #2c3e50;
     --white: #ffffff;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 5px 15px rgba(0, 0, 0, 0.08);
-    --border-radius: 12px;
-    --border-radius-small: 6px;
+    --radius: 12px;
+    --radius-sm: 6px;
+    --spacing: 25px;
+    --spacing-sm: 12px;
+    --spacing-lg: 30px;
+    --transition-time: 0.3s;
+    --translate-y: -2px;
 }
 
 body {
     font-family: 'Roboto Condensed', sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    max-width: 800px;
     min-height: 100vh;
     padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.quiz {
-    width: 100%;
-    max-width: 800px;
-    background-color: var(--white);
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     box-shadow: var(--shadow);
-    overflow: hidden;
+    margin: 0 auto;
+    color: var(--text-dark);
+    background: var(--white);
 }
 
 .quiz__header {
     background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 100%);
     color: var(--white);
-    padding: 30px;
+    padding: var(--spacing-lg);
     text-align: center;
 }
 
@@ -49,20 +50,15 @@ body {
 
 .quiz__subtitle {
     font-size: 1.1rem;
-    opacity: 0.9;
-}
-
-.quiz__form {
-    padding: 30px;
 }
 
 .quiz__card {
-    background-color: var(--gray-light);
-    border-radius: var(--border-radius-small);
-    padding: 25px;
-    margin-bottom: 25px;
+    background: var(--gray-light);
     border-left: 5px solid var(--purple);
-    transition: box-shadow 0.3s ease;
+    border-radius: var(--radius-sm);
+    padding: var(--spacing);
+    margin: var(--spacing-lg);
+    transition: box-shadow var(--transition-time) ease;
 }
 
 .quiz__card:hover {
@@ -79,98 +75,130 @@ body {
 .quiz__options {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--spacing-sm);
 }
 
 .quiz__option {
-    display: flex;
     align-items: center;
-    padding: 12px 15px;
-    background-color: var(--white);
-    border-radius: var(--border-radius-small);
+    padding: var(--spacing-sm) 15px;
+    background: var(--white);
+    border-radius: var(--radius-sm);
     border: 2px solid var(--gray-medium);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background, border-color var(--transition-time) ease;
 }
 
 .quiz__option:hover {
-    background-color: #f1f3f4;
+    background: var(--gray-medium);
     border-color: var(--purple);
 }
 
 .quiz__option input {
-    margin-right: 12px;
-    transform: scale(1.2);
-}
-
-.quiz__option-text {
-    font-size: 1rem;
-    color: var(--gray-dark);
+    margin-right: var(--spacing-sm);
+    cursor: pointer;
 }
 
 .quiz__actions {
+    padding: var(--spacing-lg);
     display: flex;
-    justify-content: flex-start;
     gap: 15px;
-    margin-top: 30px;
-    flex-direction: column;
-    align-items: left;
 }
 
 .quiz__button {
-    padding: 12px 25px;
+    padding: var(--spacing-sm) var(--spacing);
     border: none;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--radius-sm);
     font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s ease;
+    cursor: pointer;
+    transition: background, color, box-shadow, transform var(--transition-time) ease;
     font-family: 'Roboto Condensed', sans-serif;
-    background-color: var(--gray-medium);
+}
+
+.quiz__button--reset {
+    background: var(--gray-medium);
     color: var(--gray-dark);
 }
 
-.quiz__button:hover {
-    background-color: #dee2e6;
-    transform: translateY(-2px);
+.quiz__button--reset:hover {
+    background: var(--gray-medium-rare);
+    transform: translateY(var(--translate-y));
 }
 
-.quiz__details summary {
-    display: block;
-    padding: 12px 25px;
-    border: none;
-    border-radius: var(--border-radius-small);
-    font-size: 1rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-family: 'Roboto Condensed', sans-serif;
-    background-color: var(--gray-medium);
-    color: var(--gray-dark);
-    text-align: center;
+.quiz__button--check {
+    background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 100%);
+    color: var(--white);
 }
 
-.quiz__answers {
-    background-color: var(--gray-light);
-    border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
-    margin-top: -1px;
+.quiz__button--check:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(var(--translate-y));
 }
 
-.quiz__answer {
-    background-color: var(--white);
-    padding: 15px;
-    border-radius: var(--border-radius-small);
-    border-left: 4px solid var(--green);
-    margin: 10px;
+/* hide check box square */
+.quiz__check {
+    display: none;
 }
 
-.quiz__answer-question {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-dark);
+.quiz__check:checked ~ .quiz__card {
+    border-left-width: 5px;
 }
 
-.quiz__answer-correct {
-    display: block;
-    color: var(--green);
-    font-weight: 500;
+/* 1. a */
+.quiz__check:checked ~ .quiz__card:has(input[name="q1"][value="a"]:checked) {
+    border-left-color: var(--green);
+    background: var(--greed-light);
+}
+
+.quiz__check:checked ~ .quiz__card:has(input[name="q1"]:checked):not(:has(input[name="q1"][value="a"]:checked)) {
+    border-left-color: var(--red);
+    background: var(--red-light);
+}
+
+/* 2. a, b, c */
+.quiz__check:checked ~ .quiz__card:has(input[name="q2"][value="a"]:checked):has(input[name="q2"][value="b"]:checked):has(input[name="q2"][value="c"]:checked):not(:has(input[name="q2"][value="d"]:checked)) {
+    border-left-color: var(--green);
+    background: var(--greed-light);
+}
+
+.quiz__check:checked ~ .quiz__card:has(input[name="q2"]:checked):not(:has(input[name="q2"][value="a"]:checked):has(input[name="q2"][value="b"]:checked):has(input[name="q2"][value="c"]:checked):not(:has(input[name="q2"][value="d"]:checked))) {
+    border-left-color: var(--red);
+    background: var(--red-light);
+}
+
+/* 3. b */
+.quiz__check:checked ~ .quiz__card:has(input[name="q3"][value="b"]:checked) {
+    border-left-color: var(--green);
+    background: var(--greed-light);
+}
+
+.quiz__check:checked ~ .quiz__card:has(input[name="q3"]:checked):not(:has(input[name="q3"][value="b"]:checked)) {
+    border-left-color: var(--red);
+    background: var(--red-light);
+}
+
+/* 4. a, c, d */
+.quiz__check:checked ~ .quiz__card:has(input[name="q4"][value="a"]:checked):has(input[name="q4"][value="c"]:checked):has(input[name="q4"][value="d"]:checked):not(:has(input[name="q4"][value="b"]:checked)) {
+    border-left-color: var(--green);
+    background: var(--greed-light);
+}
+
+.quiz__check:checked ~ .quiz__card:has(input[name="q4"]:checked):not(:has(input[name="q4"][value="a"]:checked):has(input[name="q4"][value="c"]:checked):has(input[name="q4"][value="d"]:checked):not(:has(input[name="q4"][value="b"]:checked))) {
+    border-left-color: var(--red);
+    background: var(--red-light);
+}
+
+/* 5. a */
+.quiz__check:checked ~ .quiz__card:has(input[name="q5"][value="a"]:checked) {
+    border-left-color: var(--green);
+    background: var(--greed-light);
+}
+
+.quiz__check:checked ~ .quiz__card:has(input[name="q5"]:checked):not(:has(input[name="q5"][value="a"]:checked)) {
+    border-left-color: var(--red);
+    background: var(--red-light);
+}
+
+.quiz__check:checked ~ .quiz__actions .quiz__button--check:after {
+    content: " ✓";
 }
