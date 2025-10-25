@@ -101,6 +101,7 @@ body {
 .quiz__actions {
     padding: var(--spacing-lg);
     display: flex;
+    flex-direction: row;
     gap: 15px;
 }
 
@@ -138,10 +139,6 @@ body {
 /* hide check box square */
 .quiz__check {
     display: none;
-}
-
-.quiz__check:checked ~ .quiz__card {
-    border-left-width: 5px;
 }
 
 /* 1. a */
